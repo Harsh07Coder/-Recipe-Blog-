@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TasteHub - Recipe Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #fdfdfd; color: #333; line-height: 1.6; }
+
+    header {
+      background: linear-gradient(135deg, #ff6600, #ff9900);
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+    header p { font-size: 1.2rem; margin-top: 10px; color: #fff; }
+    nav { margin-top: 15px; }
+    nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; transition: color 0.3s ease; }
+    nav a:hover { color: #333; }
+
+    section { padding: 50px 20px; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 30px; color: #ff6600; font-size: 2rem; position: relative; }
+    h2::after { content: ''; display: block; width: 60px; height: 3px; background: #333; margin: 10px auto 0; border-radius: 2px; }
+
+    /* Search Section */
+    .search { text-align: center; margin-bottom: 30px; }
+    .search input { padding: 10px; width: 60%; border: 1px solid #ccc; border-radius: 6px; }
+    .search button { padding: 10px 20px; margin-left: 10px; background: #ff6600; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+    .search button:hover { background: #ff9900; }
+
+    /* Recipe Listings */
+    .recipes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .recipe { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+    .recipe:hover { transform: scale(1.03); }
+    .recipe h3 { margin-bottom: 10px; color: #111; }
+    .recipe p { font-size: 0.95rem; color: #555; }
+
+    /* Rating System */
+    .stars { color: #ffcc00; font-size: 1.2rem; margin-top: 10px; }
+
+    /* User Submission Form */
+    form { background: #fff; padding: 30px; border-radius: 12px; max-width: 600px; margin: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    form label { display: block; margin: 10px 0 5px; font-weight: bold; color: #333; }
+    form input, form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; }
+    form button { background: #ff6600; color: #fff; padding: 12px 25px; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: background 0.3s ease, transform 0.2s ease; }
+    form button:hover { background: #ff9900; transform: scale(1.05); }
+
+    footer {
+      background: linear-gradient(135deg, #ff6600, #ff9900);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+    }
+    footer p { font-size: 0.95rem; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TasteHub</h1>
+    <p>Discover, Cook, and Share Recipes</p>
+    <nav>
+      <a href="#browse">Browse Recipes</a>
+      <a href="#submit">Submit Recipe</a>
+    </nav>
+  </header>
+
+  <!-- Search Section -->
+  <section id="browse">
+    <h2>Browse Recipes</h2>
+    <div class="search">
+      <input type="text" placeholder="Search for recipes...">
+      <button>Search</button>
+    </div>
+    <div class="recipes">
+      <div class="recipe">
+        <h3>Spaghetti Carbonara</h3>
+        <p>Classic Italian pasta with pancetta, egg, and parmesan.</p>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+      </div>
+      <div class="recipe">
+        <h3>Vegetable Stir Fry</h3>
+        <p>Quick and healthy stir fry with fresh veggies.</p>
+        <div class="stars">⭐⭐⭐☆☆</div>
+      </div>
+      <div class="recipe">
+        <h3>Chocolate Cake</h3>
+        <p>Rich and moist chocolate cake with frosting.</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Submission Form -->
+  <section id="submit">
+    <h2>Submit Your Recipe</h2>
+    <form>
+      <label for="name">Recipe Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="ingredients">Ingredients</label>
+      <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+
+      <label for="instructions">Instructions</label>
+      <textarea id="instructions" name="instructions" rows="6" required></textarea>
+
+      <button type="submit">Submit Recipe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TasteHub | Cook, Share, Enjoy</p>
+  </footer>
+
+</body>
+</html>
